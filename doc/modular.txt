@@ -1,0 +1,17 @@
+We want to make this entire engine as modular as can be.
+Exchangeable systems for everything, making game development as easy as picking a few modules and only having to worry about actual game mechanics.
+
+Modules will either be an interface, or an abstract class. Interface being the most likely. As of now I can't think of many things abstract classes would add.
+With that said, maybe we'll do both. Interfaces allowing you to have full control over everything while abstract classes allow for better ease of use.
+
+There's 2 major options considering the structure of the engine:
+
+The engine can be embedded in a Game class, which the programmer will extend.
+Or the Engine class can be separate from the class the programmer will make (The entry class with main(), the programmer will create an engine instance in there and pass it the game or gamestates)
+
+I prefer the ladder. I feel like this fits the patterns of object orientation better, and the philosophy of making most things modular.
+Maybe even the core of the engine could be replaced if deemed necessary. What this would look like is another question.
+
+Important is that we keep the engine at the center of it all.
+The main game loop should be kept at the center of the engine.
+This implies that modules shouldn't have to be running things every frame on their own.
